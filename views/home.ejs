@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Url Shortner</title>
+</head>
+
+<body>
+        <%-include('header')%>
+        <%-include('newlink')%>
+        <div class="container mt-2 w-100" style="border:2px solid black;">
+            <h5 class="text-center"> Link Table </h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th> Old Link</th>
+                        <th> New Link </th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <%for(var i=0;i<data.length;i++){%>
+                    <tr>
+                        <td>
+                           <a target="_blank" href="<%= data[i].oldweburl %>"><%= data[i].oldweburl %></a>
+                          </td>
+                          <td>
+                            <a target="_blank" href="/web/<%= data[i].newweburl %>"><%= data[i].newweburl %></a>
+                          </td>
+                    </tr>
+                <%}%>
+                </tbody>
+            </table>
+        </div>
+</body>
+
+</html>
